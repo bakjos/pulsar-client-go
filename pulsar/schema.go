@@ -138,7 +138,7 @@ func NewSchemaDefinition(schema *goavro.Codec) *AvroCodec {
 // initAvroCodec returns a Codec used to translate between a byte slice of either
 // binary or textual Avro data and native Go data.
 func initAvroCodec(codec string) (*goavro.Codec, error) {
-	return goavro.NewCodec(codec)
+	return goavro.NewCodecForStandardJSONFull(codec)
 }
 
 type JSONSchema struct {
